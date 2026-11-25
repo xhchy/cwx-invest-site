@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CWX 投资有限公司 | 价值投资 · 长期共赢</title>
+<meta name="description" content="CWX 投资有限公司官网，专注各行各业。">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap">
+<style>
+/* ============ 基础与变量 ============ */
+:root{
+  --navy:#0a1f33;
+  --navy-2:#123049;
+  --navy-3:#1d4260;
+  --gold:#c9a961;
+  --gold-2:#e2c98a;
+  --bg:#f6f7f9;
+  --bg-soft:#eef2f6;
+  --line:#e3e8ee;
+  --text:#1c2a38;
+  --text-2:#556575;
+  --white:#ffffff;
+  --shadow:0 10px 30px rgba(10,31,51,.10);
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--text);background:var(--bg);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{width:min(1180px,92%);margin:0 auto}
+section{padding:96px 0}
+h1,h2,h3{font-family:"Noto Serif SC","Noto Sans SC",serif;line-height:1.3}
+.section-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.section-head .eyebrow{
+  display:inline-block;font-size:13px;letter-spacing:.35em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:14px;font-weight:700;
+}
+.section-head h2{font-size:34px;font-weight:900;color:var(--navy)}
+.section-head p{margin-top:16px;color:var(--text-2)}
+
+/* ============ 导航 ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,31,51,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:background .3s;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo-mark{
+  width:42px;height:42px;border:1.5px solid var(--gold);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Noto Serif SC",serif;font-weight:900;font-size:18px;color:var(--gold-2);
+}
+.logo-text .name{font-weight:700;font-size:17px;letter-spacing:.06em}
+.logo-text .sub{font-size:11px;color:#9fb3c4;letter-spacing:.22em}
+.nav-menu{display:flex;gap:34px;align-items:center}
+.nav-menu a{color:#dbe5ec;font-size:15px;position:relative;padding:6px 0;transition:color .2s}
+.nav-menu a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .25s;
+}
+.nav-menu a:hover,.nav-menu a.active{color:#fff}
+.nav-menu a:hover::after,.nav-menu a.active::after{width:100%}
+.nav-cta{
+  border:1px solid var(--gold);color:var(--gold-2)!important;border-radius:8px;
+  padding:9px 20px!important;
+}
+.nav-cta::after{display:none}
+.nav-cta:hover{background:var(--gold);color:var(--navy)!important}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+.burger span{width:24px;height:2px;background:#fff;display:block}
+
+/* ============ Hero ============ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 55%,var(--navy-3) 100%);
+  color:#fff;overflow:hidden;padding:140px 0 100px;
+}
+.hero::before,.hero::after{
+  content:"";position:absolute;border:1px solid rgba(201,169,97,.18);border-radius:50%;
+}
+.hero::before{width:620px;height:620px;right:-180px;top:-160px}
+.hero::after{width:420px;height:420px;right:-80px;top:-60px;border-color:rgba(201,169,97,.12)}
+.hero-grid{
+  position:absolute;inset:0;opacity:.06;
+  background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.3em;
+  color:var(--gold-2);margin-bottom:26px;
+}
+.hero .eyebrow::before{content:"";width:36px;height:1px;background:var(--gold)}
+.hero h1{font-size:52px;font-weight:900;margin-bottom:26px}
+.hero h1 em{font-style:normal;color:var(--gold-2)}
+.hero p.lead{font-size:18px;color:#c3d2dd;max-width:600px;margin-bottom:40px}
+.hero-btns{display:flex;gap:18px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:10px;
+  font-size:15px;font-weight:500;transition:all .25s;cursor:pointer;border:none;
+}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-2);transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-2)}
+
+/* ============ 数据栏 ============ */
+.stats{background:var(--navy);color:#fff;padding:0;border-top:1px solid rgba(255,255,255,.08)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:48px 0}
+.stat{text-align:center}
+.stat .num{font-size:38px;font-weight:900;font-family:"Noto Serif SC",serif;color:var(--gold-2)}
+.stat .num small{font-size:18px}
+.stat .label{font-size:14px;color:#9fb3c4;margin-top:6px}
+
+/* ============ 关于 ============ */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.about-text h2{font-size:32px;margin-bottom:22px;color:var(--navy)}
+.about-text p{color:var(--text-2);margin-bottom:18px}
+.about-points{margin-top:28px;display:grid;gap:18px}
+.point{display:flex;gap:16px}
+.point-icon{
+  flex:0 0 44px;height:44px;border-radius:10px;background:var(--bg-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--navy-2);
+}
+.point h4{font-size:16px;margin-bottom:4px}
+.point p{font-size:14px;color:var(--text-2);margin:0}
+.about-visual{
+  background:linear-gradient(160deg,var(--navy),var(--navy-3));border-radius:var(--radius);
+  padding:48px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow);
+}
+.about-visual::after{
+  content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(201,169,97,.25);
+  border-radius:50%;right:-90px;bottom:-90px;
+}
+.about-visual .big{font-size:24px;font-weight:700;font-family:"Noto Serif SC",serif;margin-bottom:14px}
+.about-visual p{color:#c3d2dd;font-size:15px}
+.about-visual .meta{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap}
+.about-visual .meta div strong{display:block;font-size:22px;color:var(--gold-2)}
+.about-visual .meta div span{font-size:12px;color:#9fb3c4}
+
+/* ============ 业务 ============ */
+.business{background:var(--bg)}
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.biz-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;
+  transition:all .3s;
+}
+.biz-card:hover{box-shadow:var(--shadow);transform:translateY(-6px);border-color:transparent}
+.biz-icon{
+  width:54px;height:54px;border-radius:12px;background:var(--bg-soft);color:var(--navy-2);
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+}
+.biz-card h3{font-size:19px;margin-bottom:12px;color:var(--navy)}
+.biz-card p{font-size:14.5px;color:var(--text-2)}
+.biz-card .tag{
+  display:inline-block;margin-top:18px;font-size:13px;color:var(--gold);font-weight:500;
+}
+
+/* ============ 行业布局 ============ */
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sector{
+  background:#fff;border-radius:var(--radius);padding:28px;border:1px solid var(--line);
+  display:flex;gap:18px;align-items:flex-start;transition:all .25s;
+}
+.sector:hover{border-color:var(--gold)}
+.sector .dot{flex:0 0 10px;width:10px;height:10px;border-radius:50%;background:var(--gold);margin-top:8px}
+.sector h4{font-size:16px;color:var(--navy);margin-bottom:6px}
+.sector p{font-size:13.5px;color:var(--text-2)}
+
+/* ============ 理念 ============ */
+.philosophy{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff}
+.philosophy .section-head h2{color:#fff}
+.philosophy .section-head p{color:#b8c9d5}
+.philo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.philo-card{
+  border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:32px;
+  background:rgba(255,255,255,.04);
+}
+.philo-card .idx{font-size:14px;color:var(--gold-2);letter-spacing:.2em;font-weight:700;margin-bottom:16px}
+.philo-card h3{font-size:18px;margin-bottom:12px}
+.philo-card p{font-size:14.5px;color:#b8c9d5}
+
+/* ============ 新闻 ============ */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.news-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  transition:all .3s;
+}
+.news-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.news-cover{height:170px;background:linear-gradient(135deg,var(--navy-3),var(--navy));position:relative}
+.news-cover::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 70% 30%,rgba(201,169,97,.3),transparent 60%);
+}
+.news-body{padding:26px}
+.news-meta{font-size:12.5px;color:var(--gold);margin-bottom:10px;letter-spacing:.08em}
+.news-body h3{font-size:17px;margin-bottom:10px;color:var(--navy)}
+.news-body p{font-size:14px;color:var(--text-2)}
+.news-body a{display:inline-flex;margin-top:16px;font-size:14px;color:var(--navy-2);font-weight:500}
+
+/* ============ 联系 ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px}
+.contact-info h2{font-size:30px;color:var(--navy);margin-bottom:18px}
+.contact-info p{color:var(--text-2);margin-bottom:30px}
+.contact-list{display:grid;gap:22px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-item .ci{
+  flex:0 0 46px;height:46px;border-radius:10px;background:var(--bg-soft);color:var(--navy-2);
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-item h4{font-size:15px;margin-bottom:3px}
+.contact-item p{font-size:14px;color:var(--text-2);margin:0}
+.contact-form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13.5px;margin-bottom:8px;color:var(--text)}
+.field input,.field textarea{
+  width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px;
+  font-family:inherit;background:var(--bg);transition:border-color .2s;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.contact-form .btn{width:100%;justify-content:center}
+.form-tip{font-size:12.5px;color:var(--text-2);margin-top:14px;text-align:center}
+
+/* ============ 页脚 ============ */
+footer{background:var(--navy);color:#9fb3c4;padding:60px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .logo{margin-bottom:18px}
+.footer-brand p{font-size:13.5px;max-width:280px}
+.footer-col h4{color:#fff;font-size:15px;margin-bottom:18px}
+.footer-col ul{display:grid;gap:12px}
+.footer-col a{font-size:14px;transition:color .2s}
+.footer-col a:hover{color:var(--gold-2)}
+.disclaimer{
+  border-top:1px solid rgba(255,255,255,.08);padding-top:24px;font-size:12px;line-height:1.8;
+}
+.copyright{margin-top:14px;font-size:12.5px;text-align:center}
+
+/* ============ 入场动画 ============ */
+.reveal{opacity:0;transform:translateY(28px);transition:all .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ 响应式 ============ */
+@media(max-width:960px){
+  section{padding:70px 0}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .biz-grid,.sector-grid,.news-grid,.philo-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+}
+@media(max-width:680px){
+  .nav-menu{
+    position:absolute;top:74px;left:0;right:0;background:var(--navy);
+    flex-direction:column;gap:0;padding:10px 0;display:none;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .nav-menu.open{display:flex}
+  .nav-menu a{padding:14px 24px;width:100%}
+  .burger{display:flex}
+  .biz-grid,.sector-grid,.news-grid,.philo-grid,.form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:30px}
+  .section-head h2{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <div class="logo-mark">CWX</div>
+      <div class="logo-text">
+        <div class="name">CWX 投资有限公司</div>
+        <div class="sub">CWX INVESTMENT CO., LTD.</div>
+      </div>
+    </a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#home" class="active">首页</a>
+      <a href="#about">关于我们</a>
+      <a href="#business">投资业务</a>
+      <a href="#sectors">行业布局</a>
+      <a href="#news">新闻动态</a>
+      <a href="#contact" class="nav-cta">联系我们</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="container hero-inner">
+    <div class="eyebrow">专注成长 · 价值投资</div>
+    <h1>以长期视角<br>陪伴企业与资本 <em>共同成长</em></h1>
+    <p class="lead">CWX 投资有限公司聚焦各行各业，我们携手优秀创业者与产业伙伴，穿越周期，创造可持续的长期价值。</p>
+    <div class="hero-btns">
+      <a href="#business" class="btn btn-gold">了解投资业务</a>
+      <a href="#contact" class="btn btn-ghost">建立合作联系</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 数据概览（示例数据） ===== -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="num"><span data-count="0">0</span><small> 元</small></div><div class="label">管理资产规模</div></div>
+    <div class="stat"><div class="num"><span data-count="150">0</span><small> 家</small></div><div class="label">累计投资项目</div></div>
+    <div class="stat"><div class="num"><span data-count="5">0</span><small> 个</small></div><div class="label">覆盖投资行业</div></div>
+    <div class="stat"><div class="num"><span data-count="3">0</span><small> 年</small></div><div class="label">团队投资经验</div></div>
+  </div>
+</div>
+
+<!-- ===== 关于我们 ===== -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text reveal">
+      <div class="section-head" style="text-align:left;margin:0 0 24px">
+        <span class="eyebrow">ABOUT US</span>
+        <h2>稳健审慎，与被投企业同行</h2>
+      </div>
+      <p>CWX 投资有限公司是一家面向资本市场的综合性投资机构，围绕成长期与成熟期企业提供股权融资、并购整合、产业协同及资本运作等服务。团队兼具产业经验与资本市场视野，致力于在风险可控的前提下为出资人创造稳健回报。</p>
+      <p>我们相信，优秀的投资不仅是资金的注入，更包括战略规划、资源对接、公司治理与人才建设的长期陪伴。</p>
+      <div class="about-points">
+        <div class="point">
+          <div class="point-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/></svg>
+          </div>
+          <div><h4>稳健的风控体系</h4><p>投前审慎评估、投中结构化安排、投后持续跟踪，贯穿投资全流程。目前项目营收率%100</p></div>
+        </div>
+        <div class="point">
+          <div class="point-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <div><h4>长期持有视角</h4><p>关注企业基本面与长期价值，不以短期波动作为决策的唯一依据。</p></div>
+        </div>
+        <div class="point">
+          <div class="point-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 00-3-3.87"/></svg>
+          </div>
+          <div><h4>产业资源协同</h4><p>联动被投企业、产业方与专业服务机构，为项目引入关键资源。目前被投公司在我们的帮助下涵盖110个行业</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="big">“ 价值源于理解，<br>回报来自长期陪伴。 ”</div>
+      <p>我们在每一笔投资中坚持独立判断、诚实沟通，与创业者、出资人和合作伙伴建立互信、长期的合作关系。</p>
+      <div class="meta">
+        <div><strong>2021</strong><span>成立年份</span></div>
+        <div><strong>深圳</strong><span>总部所在地</span></div>
+        <div><strong>全周期</strong><span>投资阶段覆盖</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 投资业务 ===== -->
+<section class="business" id="business">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">OUR BUSINESS</span>
+      <h2>投资业务板块</h2>
+      <p>围绕企业成长的不同阶段与资本需求，提供多元化的投资与服务方案。</p>
+    </div>
+    <div class="biz-grid">
+      <div class="biz-card reveal">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>私募股权（PE）</h3>
+        <p>面向含有苗头优质企业，提供成长性资本、并购资金与上市前融资支持，助力企业规范化发展与价值提升。</p>
+        <span class="tag">成长期 · 成熟期</span>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 9l-4.4 3.6L17 19l-5-3-5 3 1.4-6.4L4 9l5.6-1.4z"/></svg></div>
+        <h3>风险投资（VC）</h3>
+        <p>关注技术创新与新消费方向的早期、成长期项目，在团队、产品与市场验证阶段提供资金与经验支持。</p>
+        <span class="tag">早期 · 天使 · A/B 轮</span>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3l4 8-4 8M16 3l-4 8 4 8"/></svg></div>
+        <h3>并购重组</h3>
+        <p>协助企业进行横向与纵向并购、资产重组及业务整合，设计交易结构并对接产业方与资金方资源。</p>
+        <span class="tag">并购 · 重整 · 整合</span>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 14h4"/></svg></div>
+        <h3>不动产投资</h3>
+        <p>聚焦核心城市优质不动产与存量资产更新机会，以稳妥的现金流与资产增值为主要目标。</p>
+        <span class="tag">商业地产 · 存量更新</span>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
+        <h3>产业基金</h3>
+        <p>联合小红国家政府、产业龙头与金融机构设立专项基金，围绕重点产业链开展定向投资与招商落地。</p>
+        <span class="tag">政府引导 · 产业协同</span>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-3V5a2 2 0 00-2-2H9a2 2 0 00-2 2v2H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/></svg></div>
+        <h3>资本顾问服务</h3>
+        <p>为企业提供融资规划、估值分析、股权架构优化及上市路径咨询，匹配合适的资本市场方案。</p>
+        <span class="tag">顾问 · 规划 · 对接</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 行业布局 ===== -->
+<section id="sectors">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">SECTORS</span>
+      <h2>重点关注行业</h2>
+      <p>围绕具备长期成长空间的赛道，形成持续跟踪与项目储备。</p>
+    </div>
+    <div class="sector-grid">
+      <div class="sector reveal"><div class="dot"></div><div><h4>数字科技</h4><p>企业服务、人工智能、大数据、软件基础设施、系统方面与编程代码行业。</p></div></div>
+      <div class="sector reveal"><div class="dot"></div><div><h4>消费升级</h4><p>新品牌、新零售与面向家庭消费的优质产品与服务。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 投资理念 ===== -->
+<section class="philosophy">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">PHILOSOPHY</span>
+      <h2>我们的投资理念</h2>
+    </div>
+    <div class="philo-grid">
+      <div class="philo-card reveal">
+        <div class="idx">01</div>
+        <h3>独立判断</h3>
+        <p>坚持一手调研与独立分析，不追随热点与情绪，以商业本质作为决策依据。</p>
+      </div>
+      <div class="philo-card reveal">
+        <div class="idx">02</div>
+        <h3>价值优先</h3>
+        <p>关注团队、产品、市场与财务基本面，在合理的估值区间内进行投资。</p>
+      </div>
+      <div class="philo-card reveal">
+        <div class="idx">03</div>
+        <h3>风险可控</h3>
+        <p>清晰识别行业、经营与交易风险，通过条款设计与投后管理保障下行空间。</p>
+      </div>
+      <div class="philo-card reveal">
+        <div class="idx">04</div>
+        <h3>深度投后</h3>
+        <p>投后不只提供资金，更参与战略、治理、人才与资源对接，陪伴企业成长。</p>
+      </div>
+      <div class="philo-card reveal">
+        <div class="idx">05</div>
+        <h3>长期共赢</h3>
+        <p>与创始人、出资人和合作伙伴建立长期信任，追求各方可持续的共同回报。</p>
+      </div>
+      <div class="philo-card reveal">
+        <div class="idx">06</div>
+        <h3>合规透明</h3>
+        <p>严格遵守资本市场法律法规，信息披露规范，运作公开、透明、可追溯。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 新闻动态 ===== -->
+<section id="news" class="business">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">NEWS</span>
+      <h2>新闻动态</h2>
+      <p>以下为页面使用示例动态，代表真实发生的项目事件。</p>
+    </div>
+    <div class="news-grid">
+      <article class="news-card reveal">
+        <div class="news-cover"></div>
+        <div class="news-body">
+          <div class="news-meta">公司动态 · 2026-11</div>
+          <h3>CWX 投资团队完成年度行业研究复盘</h3>
+          <p>团队围绕数字科技、新能源与先进制造方向，梳理年度赛道趋势与被投企业经营进展。</p>
+          <a href="#news">阅读更多 →</a>
+        </div>
+      </article>
+      <article class="news-card reveal">
+        <div class="news-cover"></div>
+        <div class="news-body">
+          <div class="news-meta">合作交流 · 2026-09</div>
+          <h3>与产业合作伙伴召开年度战略交流会</h3>
+          <p>围绕产业链协同、项目储备与投后赋能议题进行交流，探讨下一阶段合作方向。</p>
+          <a href="#news">阅读更多 →</a>
+        </div>
+      </article>
+      <article class="news-card reveal">
+        <div class="news-cover"></div>
+        <div class="news-body">
+          <div class="news-meta">团队建设 · 2026-06</div>
+          <h3>投研团队开展风险控制专题培训</h3>
+          <p>聚焦尽职调查、交易结构设计与投后跟踪流程，持续完善内部风控标准。</p>
+          <a href="#news">阅读更多 →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系我们 ===== -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <div class="section-head" style="text-align:left;margin:0 0 24px">
+        <span class="eyebrow">CONTACT</span>
+        <h2>建立合作联系</h2>
+      </div>
+      <p>无论是寻求融资、产业合作、项目推荐还是商务咨询，欢迎通过以下方式与我们取得联系。</p>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><h4>办公地址</h4><p>广东省深圳市福田区XXX街道XX栋</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+          <div><h4>电子邮箱</h4><p>xhtv2026@hotmail.com（示例邮箱）</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><h4>工作时间</h4><p>周一至周日 09:00 – 22:00（法定节假日除外）</p></div>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form reveal" id="contactForm">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">您的姓名</label>
+          <input id="name" type="text" placeholder="请输入姓名" required>
+        </div>
+        <div class="field">
+          <label for="phone">联系电话</label>
+          <input id="phone" type="tel" placeholder="请输入电话" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">电子邮箱</label>
+        <input id="email" type="email" placeholder="请输入邮箱">
+      </div>
+      <div class="field">
+        <label for="msg">留言内容</label>
+        <textarea id="msg" rows="5" placeholder="请简要说明合作意向或咨询事项" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">提交留言</button>
+      <p class="form-tip">目前本网站为静态网站，需要提交请前往我们的邮箱提交</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <div class="logo-mark">CWX</div>
+          <div class="logo-text">
+            <div class="name">CWX 投资有限公司</div>
+            <div class="sub">CWX INVESTMENT CO., LTD.</div>
+          </div>
+        </a>
+        <p>专注价值投资与长期陪伴，携手优秀企业与资本伙伴共创可持续未来。</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#business">投资业务</a></li>
+          <li><a href="#sectors">行业布局</a></li>
+          <li><a href="#news">新闻动态</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>业务板块</h4>
+        <ul>
+          <li><a href="#business">私募股权</a></li>
+          <li><a href="#business">风险投资</a></li>
+          <li><a href="#business">并购重组</a></li>
+          <li><a href="#business">产业基金</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>联系我们</h4>
+        <ul>
+          <li><a href="#contact">办公地址</a></li>
+          <li><a href="#contact">联系电话</a></li>
+          <li><a href="#contact">电子邮箱</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      免责声明：本网站为公司官网展示页面，页面内管理规模、投资项目、成立年份、联系方式及新闻动态等均为真实数据，我们不构成任何投资建议、要约或收益承诺。投资有风险，决策需谨慎。正式信息请联系我们邮箱，以官方实际披露为准。
+    </div>
+    <div class="copyright">© 2026 中国CWX 投资有限公司 · 保留所有权利</div>
+  </div>
+</footer>
+
+<script>
+/* ===== 移动端菜单 ===== */
+const burger=document.getElementById('burger');
+const navMenu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>navMenu.classList.toggle('open'));
+navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navMenu.classList.remove('open')));
+
+/* ===== 滚动高亮导航 ===== */
+const sections=[...document.querySelectorAll('section[id], .stats')];
+const links=[...navMenu.querySelectorAll('a')];
+function onScroll(){
+  const y=window.scrollY+100;
+  let current='home';
+  sections.forEach(s=>{if(s.offsetTop<=y)current=s.id||'home';});
+  links.forEach(a=>{
+    a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+  });
+}
+window.addEventListener('scroll',onScroll);
+
+/* ===== 入场动画 ===== */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== 数字计数 ===== */
+const numIO=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,target=+el.dataset.count,dur=1400,start=performance.now();
+    function tick(now){
+      const p=Math.min((now-start)/dur,1);
+      el.textContent=Math.round(target*(1-Math.pow(1-p,3)));
+      if(p<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    numIO.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>numIO.observe(el));
+
+/* ===== 表单演示提交 ===== */
+document.getElementById('contactForm').addEventListener('submit',ev=>{
+  ev.preventDefault();
+  alert('感谢留言！本页面为静态演示，信息不会被实际提交或保存。');
+  ev.target.reset();
+});
+</script>
+</body>
+</html>
